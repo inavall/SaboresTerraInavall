@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da Terra - Restaurante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero {
+            background-image: url('../images/hero-bg.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .btn-primary {
+            background-color: #F59E0B;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #D97706;
+        }
+
+        .about-us .content {
+            background-color: rgba(173, 150, 211, 0.85);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(129, 150, 207, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2C3E50;
+        }
+
+        .card-price {
+            color: #011108;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .stars {
+            color: #FFD700;
+        }
+
+        .hero .text-lg {
+            margin-bottom: 4px;
+        }
+
+        .hero .btn-primary {
+            font-size: 1.2rem;
+            padding: 12px 24px;
+            border-radius: 5px;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: rgba(31, 41, 55, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar a {
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #F59E0B;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(31, 41, 55, 0.8); /* Cor igual ao navbar */
+            color: white;
+            padding: 20px 0;
+        }
+
+        /* Sobre nós - ajustado */
+        .about-us img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        /* Cards menores para sobre nós */
+        .about-us .content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Garantir que o conteúdo seja centralizado */
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Centralizando o título e conteúdo */
+        .text-center {
+            text-align: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header (Navbar) -->
+    <header class="navbar py-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold flex items-center">
+                <img src="../images/logo.png" alt="Logo Sabores da Terra" class="h-10 mr-2 inline-block">
+                Sabores da Terra
+            </a>
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="#" class="hover:text-gray-300">Início</a></li>
+                    <li><a href="../menu.html" class="hover:text-gray-300">Cardápio</a></li>
+                    <li><a href="../sabores.html" class="hover:text-gray-300">Sabores de Marromeu</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="mt-24">
+
+        <!-- Hero Section -->
+        <section class="hero py-32 text-center text-white">
+            <div class="container mx-auto">
+                <h1 class="text-5xl font-bold mb-4 text-shadow-lg">Bem-vindo ao Sabores da Terra</h1>
+                <p class="text-lg mb-6 text-shadow-lg">Descubra o melhor da culinária tradicional, com receitas autênticas e frescas, feitas com amor.</p>
+                <a href="../menu.html" class="btn-primary text-white font-bold py-3 px-8 rounded-lg shadow-lg">Ver Cardápio</a>
+            </div>
+        </section>
+
+        <!-- Featured Dishes -->
+        <section class="featured-dishes py-16 bg-gray-50">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-12">Pratos Mais Recomendados</h2>
+                <p class="text-lg mb-8 text-gray-600">Esses pratos são os mais recomendados pelos nossos clientes:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dish 1 -->
+                    <div class="card mx-auto">
+                        <img src="../images/peixe_assado.png" alt="Peixe Assado">
+                        <div class="p-4">
+                            <p class="card-title">Peixe Assado</p>
+                            <p class="text-gray-600 mb-2">Filé de peixe grelhado, acompanhado de arroz e legumes.</p>
+                            <span class="card-price">120.00 MT</span>
+                            <div class="mt-2">
+                                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dish 2 -->
+                    <div class="card mx-auto">
+                        <img src="../images/feijoada_mocambicana.png" alt="Feijoada Moçambicana">
+                        <div class="p-4">
+                            <p class="card-title">Feijoada Moçambicana</p>
+                            <p class="text-gray-600 mb-2">Feijoada tradicional com linguiça e carne bovina.</p>
+                            <span class="card-price">150.00 MT</span>
+                            <div class="mt-2">
+                                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="about" class="about-us py-16 bg-white">
+            <div class="container mx-auto text-center">
+                <div class="content">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-8">Sabores da Terra - Sabores de Marromeu</h2>
+                    <p class="text-lg text-gray-600 mb-8">O Sabores da Terra tem como missão levar até você o autêntico sabor de Marromeu, Sofala. Utilizamos ingredientes frescos e locais, com receitas que respeitam as tradições da região, proporcionando uma experiência única e inesquecível.</p>
+                    <img src="../images/sobre-nos.jpg" alt="Sabores de Marromeu" class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Sabores da Terra. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

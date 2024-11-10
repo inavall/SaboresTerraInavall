@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da Terra - Restaurante</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('images/hero-bg.jpg');
+            background-position: center;
+            background-size: cover;
+            padding: 50px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn-primary {
+            background-color: #F59E0B;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .hero .btn-primary:hover {
+            background-color: #D97706;
+        }
+
+        /* Custom Card Styles */
+        .menu-section {
+            background-color: #f9fafb;
+        }
+
+        .menu-item {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .card-price {
+            color: #27AE60;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .btn-order {
+            background-color: #F59E0B;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-order:hover {
+            background-color: #D97706;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: rgba(31, 41, 55, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar a {
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #F59E0B;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(31, 41, 55, 0.8);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header (Navbar) -->
+    <header class="navbar py-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold flex items-center">
+                <img src="images/logo.png" alt="Sabores da Terra" class="h-12 mr-2 inline-block">
+                Sabores da Terra
+            </a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="hover:text-gray-200">Home</a></li>
+                    <li><a href="menu.html" class="hover:text-gray-200">Cardápio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-semibold mb-4">Explore o nosso Cardápio</h1>
+            <p class="text-xl mb-6">Pratos frescos, tradicionais e feitos com amor. Delicie-se com os sabores da nossa terra.</p>
+            <a href="#menu" class="btn-primary text-white">Veja os Pratos</a>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main>
+        <section class="menu-section py-16">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-8">Explore Delícias do Nosso Cardápio</h2>
+
+                <!-- Menu Items Grid -->
+                <div class="menu-grid">
+                    <!-- Prato 1: Peixe Assado -->
+                    <div class="menu-item bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="images/peixe_assado.png" alt="Peixe Assado">
+                        <div class="p-4">
+                            <h3 class="card-title">Peixe Assado</h3>
+                            <p class="text-gray-600 mb-4">Filé de peixe grelhado, acompanhado de arroz e legumes.</p>
+                            <span class="card-price">120.00 MT</span>
+                            <a href="encomendas.html?prato=peixe_assado" class="btn-order mt-4">Encomendar</a>
+                        </div>
+                    </div>
+
+                    <!-- Prato 2: Feijoada Moçambicana -->
+                    <div class="menu-item bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="images/feijoada_mocambicana.png" alt="Feijoada Moçambicana">
+                        <div class="p-4">
+                            <h3 class="card-title">Feijoada Moçambicana</h3>
+                            <p class="text-gray-600 mb-4">Feijoada tradicional com linguiça e carne bovina.</p>
+                            <span class="card-price">150.00 MT</span>
+                            <a href="encomendas.html?prato=feijoada_mocambicana" class="btn-order mt-4">Encomendar</a>
+                        </div>
+                    </div>
+
+                    <!-- Prato 3: Frango Piri Piri -->
+                    <div class="menu-item bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="images/frango_piri_piri.png" alt="Frango Piri Piri">
+                        <div class="p-4">
+                            <h3 class="card-title">Frango Piri Piri</h3>
+                            <p class="text-gray-600 mb-4">Frango assado com molho piri piri, acompanhado de batatas fritas.</p>
+                            <span class="card-price">125.00 MT</span>
+                            <a href="encomendas.html?prato=frango_piri_piri" class="btn-order mt-4">Encomendar</a>
+                        </div>
+                    </div>
+
+                    <!-- Prato 4: Doce de Manga -->
+                    <div class="menu-item bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="images/doce_de_manga.png" alt="Doce de Manga">
+                        <div class="p-4">
+                            <h3 class="card-title">Doce de Manga</h3>
+                            <p class="text-gray-600 mb-4">Delicioso doce de manga caseiro.</p>
+                            <span class="card-price">55.00 MT</span>
+                            <a href="encomendas.html?prato=doce_de_manga" class="btn-order mt-4">Encomendar</a>
+                        </div>
+                    </div>
+
+                    <!-- Prato 5: Chima -->
+                    <div class="menu-item bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="images/chima.png" alt="Chima">
+                        <div class="p-4">
+                            <h3 class="card-title">Chima</h3>
+                            <p class="text-gray-600 mb-4">Prato típico moçambicano, à base de farinha de milho.</p>
+                            <span class="card-price">70.00 MT</span>
+                            <a href="encomendas.html?prato=chima" class="btn-order mt-4">Encomendar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sabores da Terra. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
+

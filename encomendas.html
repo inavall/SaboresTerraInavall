@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encomendas - Sabores da Terra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+</head>
+<body class="font-sans text-gray-800">
+
+    <!-- Header -->
+       <!-- Header -->
+       <header class="bg-green-500 text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center">
+                <img src="../images/logo.png" alt="Logo do Restaurante Sabores da Terra" class="h-12 mr-2 inline-block">
+                Sabores da Terra
+            </a>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-200">Home</a></li>
+                    <li><a href="../menu.html" class="hover:text-gray-200">Cardápio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section class="py-16">
+            <div class="container mx-auto max-w-lg bg-white shadow-lg rounded-lg p-8">
+                <h2 class="text-2xl font-bold mb-6 text-center">Formulário de Encomenda</h2>
+                <form id="encomendaForm" method="POST">
+                    <!-- Lista de Pratos -->
+                    <div class="mb-4">
+                        <label for="prato" class="block text-lg font-medium text-gray-700">Escolha o Prato</label>
+                        <select id="prato" name="prato" class="w-full p-3 border border-gray-300 rounded-md" required onchange="updatePreco()">
+                            <option value="" disabled selected>Selecione um prato</option>
+                            <option value="peixe_assado" data-preco="120">Peixe Assado - 120.00 MT</option>
+                            <option value="feijoada_mocambicana" data-preco="150">Feijoada Moçambicana - 150.00 MT</option>
+                            <option value="frango_piri_piri" data-preco="125">Frango Piri Piri - 125.00 MT</option>
+                            <option value="doce_de_manga" data-preco="55">Doce de Manga - 55.00 MT</option>
+                            <option value="chima" data-preco="70">Chima - 70.00 MT</option>
+                        </select>
+                    </div>
+
+                    <!-- Quantidade -->
+                    <div class="mb-4">
+                        <label for="quantidade" class="block text-lg font-medium text-gray-700">Quantidade</label>
+                        <input type="number" id="quantidade" name="quantidade" min="1" value="1" class="w-full p-3 border border-gray-300 rounded-md" required onchange="updatePreco()">
+                    </div>
+
+                    <!-- Preço -->
+                    <div class="mb-4">
+                        <label for="preco" class="block text-lg font-medium text-gray-700">Preço Total</label>
+                        <input type="text" id="preco" name="preco" class="w-full p-3 border border-gray-300 rounded-md" readonly>
+                    </div>
+
+                    <!-- Nome -->
+                    <div class="mb-4">
+                        <label for="nome" class="block text-lg font-medium text-gray-700">Nome</label>
+                        <input type="text" id="nome" name="nome" required class="w-full p-3 border border-gray-300 rounded-md" placeholder="Digite seu nome">
+                    </div>
+
+                    <!-- Endereço -->
+                    <div class="mb-4">
+                        <label for="endereco" class="block text-lg font-medium text-gray-700">Endereço de Entrega</label>
+                        <input type="text" id="endereco" name="endereco" required class="w-full p-3 border border-gray-300 rounded-md" placeholder="Digite seu endereço">
+                    </div>
+
+                    <!-- Botão de Envio -->
+                    <div class="mb-4 text-center">
+                        <button type="submit" class="bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600">
+                            Enviar Encomenda
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-500 text-white py-4 shadow-md">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Sabores da Terra. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Função para atualizar o preço total com base no prato selecionado e na quantidade
+        function updatePreco() {
+            const pratoSelect = document.getElementById('prato');
+            const quantidade = document.getElementById('quantidade').value;
+            const precoInput = document.getElementById('preco');
+            const preco = pratoSelect.options[pratoSelect.selectedIndex]?.getAttribute('data-preco');
+
+            if (preco) {
+                const precoTotal = parseFloat(preco) * parseInt(quantidade);
+                precoInput.value = `${precoTotal.toFixed(2)} MT`;
+            }
+        }
+
+        // Função de envio do formulário
+        document.getElementById('encomendaForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Impede o envio do formulário tradicional
+
+            // Simulação de envio e notificação
+            const nome = document.getElementById('nome').value;
+            const prato = document.getElementById('prato').value;
+            const quantidade = document.getElementById('quantidade').value;
+            const preco = document.getElementById('preco').value;
+
+            // Exibe mensagem de confirmação
+            alert(`Encomenda de ${quantidade} unidades de ${prato} no valor de ${preco} foi submetida!`);
+
+            // Pergunta ao cliente se deseja voltar ou sair
+            const resposta = confirm('Deseja voltar à página principal ou sair?');
+
+            if (resposta) {
+                window.location.href = 'index.html';  // Volta à página principal
+            } else {
+                window.close();  // Fecha a aba ou a janela
+            }
+        });
+    </script>
+
+</body>
+</html>
+
